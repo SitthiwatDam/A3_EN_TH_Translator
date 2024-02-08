@@ -1,0 +1,14 @@
+version: '3'
+services:
+  engine_search:
+    image: sittiwat555/en_th_translator:lastest
+    build:
+      context: .
+      dockerfile: DockerFile.a3st123994
+    ports:
+      - 5000:5000
+    volumes:
+      - ./app:/root/app
+
+
+  

@@ -1,0 +1,23 @@
+FROM python:3.10.13-bookworm
+
+WORKDIR /root/app
+
+# Install dependencies
+
+RUN pip3 install --upgrade pip
+RUN pip3 install numpy
+RUN pip3 install pandas
+RUN pip3 install Flask==3.0.1
+RUN pip3 install torch==2.2.0
+RUN pip3 install torchtext==0.17.0
+RUN pip3 install pythainlp
+RUN pip3 install python-crfsuite
+
+# Copy the entire project to the working directory
+COPY ./app /root/app  
+
+# CMD tail -f /dev/null
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+
+
+
